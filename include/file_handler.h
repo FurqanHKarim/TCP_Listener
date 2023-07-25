@@ -1,4 +1,8 @@
-#pragma once
+#ifndef _file_handler
+#define _file_handler
+
+
+
 #include<fstream>
 #include<string>
 #include"Data_container.h"
@@ -18,3 +22,4 @@ public:
 };
 
 
+#endif // !_file_handler

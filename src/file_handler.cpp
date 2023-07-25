@@ -4,7 +4,7 @@
 
 
 void file_handler:: write_file(Data_recieved &current) {
-	this->reservoir.write(current.TXT, current.lenght_txt);
+	this->reservoir.write(current.array, current.head.lenght_txt);
 	this->reservoir.write("\0\n\n\n\n", 5);
 
 }

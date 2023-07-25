@@ -1,14 +1,23 @@
-#pragma once
-#include<iostream>
+#ifndef _Data_container
+#define _Data_container
 
-struct Data_recieved {
+
+#include<iostream>
+#include"TCP_client.h"
+
+struct Data_head {
 	uint64_t head;
 	uint32_t miss;
 	uint32_t lenght_txt;
-	char TXT[1984];
-	
 
+};
+struct Data_recieved {
+	Data_head head;
+	char array[(buffer_size) - 16];
+	
 	bool verifyData();
 	void empty_buffer();
 	void print_all();
 };
+
+#endif // !_Data_container

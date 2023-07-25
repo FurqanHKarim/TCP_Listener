@@ -1,9 +1,13 @@
-#pragma once
+#ifndef _TCP_client
+#define _TCP_client
 
 #include <WinSock2.h>
 #include <WS2tcpip.h>
 #include <string>
 #include <iostream>
+
+#define buffer_size 1<<15
+
 
 using namespace std;
 
@@ -12,9 +16,10 @@ class TCP_client {
 	SOCKET client_socket;
 	sockaddr_in server_address;
 	PCSTR IP_address;
-	
+
 
 public:
+	char buffer[buffer_size] = { 0 };// buffer that will store the information
 	TCP_client(int,int, const char*);
 	~TCP_client();
 	int validate_WINSOCK();
@@ -27,6 +32,7 @@ public:
 
 };
 
+#endif // !_TCP_client
 
 ///@brief for self understanding
 //WSADATA wsa_date;//done
