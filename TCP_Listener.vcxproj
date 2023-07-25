@@ -78,6 +78,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)/include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -140,13 +141,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp" />
-    <ClCompile Include="original.cpp" />
-    <ClCompile Include="TCP_client.cpp" />
+    <ClCompile Include="src\file_handler.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Data_container.cpp" />
+    <ClCompile Include="src\TCP_client.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Data_container.h" />
-    <ClInclude Include="TCP_client.h" />
+    <ClInclude Include="include\Data_container.h" />
+    <ClInclude Include="include\file_handler.h" />
+    <ClInclude Include="include\TCP_client.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
